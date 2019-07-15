@@ -6,7 +6,14 @@ class List extends Component {
     return (
       <ul>
         {this.props.shoppingList.map(listItem => (
-          <li className="list-item">{listItem}</li>
+          <div key={listItem}>
+            <input
+              type="checkbox"
+              value="completed"
+              onClick={event => this.props.removeItem(listItem)}
+            />
+            <li className="list-item">{listItem}</li>
+          </div>
         ))}
       </ul>
     );
