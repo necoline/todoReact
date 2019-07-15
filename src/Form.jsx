@@ -13,6 +13,7 @@ class Form extends Component {
   sendItem = event => {
     event.preventDefault();
     this.props.addItem(this.state.inputText);
+    this.setState({ inputText: "" });
   };
 
   render() {
@@ -21,7 +22,7 @@ class Form extends Component {
         <input
           type="text"
           placeholder="add an item"
-          value={this.state.text}
+          value={this.state.inputText}
           onChange={this.handleChange}
         />
         <button type="submit">ADD</button>

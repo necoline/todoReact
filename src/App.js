@@ -4,7 +4,7 @@ import Header from "./Header";
 import ToDoList from "./ToDoList";
 
 function App() {
-  //js
+  //get saved list
   return (
     <div className="App">
       <Header userName="Marie" />

@@ -4,7 +4,7 @@ import Form from "./Form";
 
 class ToDoList extends Component {
   state = {
-    list: ["water", "tomatoes", "wheat"]
+    list: []
   };
 
   // add to the list
@@ -15,7 +15,8 @@ class ToDoList extends Component {
 
   // remove items from the list
   removeItem = item => {
-    // new array without the item
+    const newList = this.state.list.filter(listItem => listItem !== item);
+    this.setState({ list: newList });
   };
 
   render() {
