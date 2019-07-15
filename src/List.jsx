@@ -6,7 +6,9 @@ class List extends Component {
     return (
       <ul>
         {this.props.shoppingList.map(listItem => (
-          <li className="list-item">{listItem}</li>
+          <li key={listItem} className="list-item">
+            {listItem}
+          </li>
         ))}
       </ul>
     );
