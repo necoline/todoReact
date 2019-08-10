@@ -2,23 +2,18 @@ import React, { Component } from "react";
 
 class Form extends Component {
   state = {
-    firstName: "",
-    lastName: "",
-    phoneNumber: 0,
+    inputText: ""
   };
 
-  handleChange = ({target}) => {
-    this.setState({ [target.id]: target.value });
+  handleChange = event => {
+    const inputText = event.target.value;
+    this.setState({ inputText });
   };
 
   sendItem = event => {
     event.preventDefault();
-    this.props.addContact(this.state);
-    this.setState({ 
-      firstName: "",
-      lastName: "",
-      phoneNumber: 0,
-   });
+    this.props.addItem(this.state.inputText);
+    this.setState({ inputText: "" });
   };
 
   render() {
@@ -26,23 +21,8 @@ class Form extends Component {
       <form onSubmit={this.sendItem}>
         <input
           type="text"
-          placeholder="add first name"
-          value={this.state.firstName}
-          id={"firstName"}
-          onChange={this.handleChange}
-        />
-        <input
-          type="text"
-          placeholder="add last name"
-          value={this.state.lastName}
-          id={"lastName"}
-          onChange={this.handleChange}
-        />
-        <input
-          type="number"
-          placeholder="add a phone number"
-          value={this.state.phoneNumber}
-          id={"phoneNumber"}
+          placeholder="add an item"
+          value={this.state.inputText}
           onChange={this.handleChange}
         />
         <button type="submit">ADD</button>
