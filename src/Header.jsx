@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = props => {
-  return <header>Shopping List for {props.userName}</header>;
+  return <header>Phonebook</header>;
 };
 
 export default Header;

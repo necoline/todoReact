@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
 import Header from "./Header";
-import ToDoList from "./ToDoList";
+import Phonebook from "./Phonebook";
 
 function App() {
   //get saved list
   return (
     <div className="App">
       <Header userName="Marie" />
-      <ToDoList />
+      <Phonebook />
     </div>
   );
 }
